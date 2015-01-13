@@ -29,7 +29,7 @@ else:
 if len(keysFile.read()) == 0:
 	authUrl = auth.get_authorization_url()
 	site(authUrl)
-	authPIN = input("Enter your auth PIN: ")
+	authPIN = raw_input("Enter your auth PIN: ")
 	try:
 		auth.get_access_token(authPIN)
 	except tweepy.TweepError:
