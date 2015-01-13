@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*-*- encoding: utf-8 -*-*-
 # Twitter-Sort
 # main.py
 # Aaron Taylor
@@ -9,6 +11,7 @@
 
 import tweepy, sys, os
 from webbrowser import open as site # For the auth token
+from builtins import input # Compatibility for Py2 and Py3. Needs future
 import settings
 
 keysPath = "keys.txt"
@@ -29,7 +32,7 @@ else:
 if len(keysFile.read()) == 0:
 	authUrl = auth.get_authorization_url()
 	site(authUrl)
-	authPIN = raw_input("Enter your auth PIN: ")
+	authPIN = input("Enter your auth PIN: ")
 	try:
 		auth.get_access_token(authPIN)
 	except tweepy.TweepError:
