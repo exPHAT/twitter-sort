@@ -22,6 +22,8 @@ Or clone from the Git repository:
 Rename `settings_template.py` to `settings.py` and fill the API_KEY and
 API_SECRET with your own key.
 
+The program works on Python 3. To make it work with Python 2, install `future`.
+
 Usage
 -----
 
