@@ -1,4 +1,4 @@
-# Aaron-Sort
+# Twitter-Sort
 # main.py
 # Aaron Taylor
 #
@@ -21,9 +21,10 @@ numbers = eval("".join(sys.argv[1:]))
 auth = tweepy.OAuthHandler("API_KEY_9J7eWF66", "API_SECRET_39yoSEdA")
 
 if os.path.exists(keysPath):
-	keysFile = open(keysPath, "r")
+	keysFile = open(keysPath, "r+")
 else:
 	keysFile = open(keysPath, "a+")
+	keysFile.seek(0)
 
 if len(keysFile.read()) == 0:
 	authUrl = auth.get_authorization_url()
