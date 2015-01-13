@@ -9,7 +9,7 @@
 
 import tweepy, sys, os
 from webbrowser import open as site # For the auth token
-from time import sleep
+import settings
 
 keysPath = "keys.txt"
 if len(sys.argv) == 1:
@@ -18,7 +18,7 @@ if len(sys.argv) == 1:
 
 numbers = eval("".join(sys.argv[1:]))
 
-auth = tweepy.OAuthHandler("API_KEY_9J7eWF66", "API_SECRET_39yoSEdA")
+auth = tweepy.OAuthHandler(settings.API_KEY, settings.API_SECRET)
 
 if os.path.exists(keysPath):
 	keysFile = open(keysPath, "r+")
@@ -29,7 +29,7 @@ else:
 if len(keysFile.read()) == 0:
 	authUrl = auth.get_authorization_url()
 	site(authUrl)
-	authPIN = input("Enter your auth PIN: ")
+	authPIN = raw_input("Enter your auth PIN: ")
 	try:
 		auth.get_access_token(authPIN)
 	except tweepy.TweepError:
