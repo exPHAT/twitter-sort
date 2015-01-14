@@ -82,7 +82,7 @@ class ReplyListener(tweepy.StreamListener):
 
 			if areSorted:
 				print(givenNumbers) # Print the sorted numbers to the console
-				api.destroy_status(tweetID) # Delete tweet
+				api.update_status("Awesome! Thanks!", in_reply_to_status_id=status.id)
 				return False
 			else:
 				api.update_status("Those numbers aren't sorted!", in_reply_to_status_id=status.id)
