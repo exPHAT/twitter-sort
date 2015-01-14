@@ -22,9 +22,11 @@ Or clone from the Git repository:
 Rename `settings_template.py` to `settings.py` and fill the API_KEY and
 API_SECRET with your own key.
 
-Usage
------
+Example
+-------
 
 ```shell
-$ python main.py 1,2,3,4
+$ python main.py 99,9001,1337,8008,301
 ```
+
+![a twitter-sort example](https://raw.githubusercontent.com/ExPHAT/twitter-sort/master/demo.png)
