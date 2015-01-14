@@ -31,9 +31,9 @@ if len(keysFile.read()) == 0:
 	site(authUrl)
 	authPIN = input("Enter your auth PIN: ")
 	try:
-		auth.get_access_token(authPIN)
-	except tweepy.TweepError:
-		print("Error: Getting access token failed!")
+		auth.get_access_token(str(authPIN))
+	except tweepy.TweepErrori as e:
+		print("Error: Getting access token failed: "+e.message)
 		sys.exit()
 	# Save for next call
 	keysFile.write(auth.access_token+" "+auth.access_token_secret)
