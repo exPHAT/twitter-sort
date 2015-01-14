@@ -76,7 +76,7 @@ class ReplyListener(tweepy.StreamListener):
 					break
 			for i in range(len(givenNumbers)):
 				if i > 0:
-					if not givenNumbers[i] > givenNumbers[i-1]:
+					if not givenNumbers[i] >= givenNumbers[i-1]:
 						areSorted = False
 						break
 
