@@ -51,7 +51,7 @@ else:
 
 api = tweepy.API(auth)
 
-tweetID = api.update_status("Can you sort these numbers? " + str(numbers)).id
+tweetID = api.update_status(status="Can you sort these numbers? " + str(numbers)).id
 
 
 class ReplyListener(tweepy.StreamListener):
